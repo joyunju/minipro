@@ -1,6 +1,5 @@
 // 이름(name), 휴대전화(hp), 회사번호(company)
 
-
 package com.javaex.phonebook;
 
 public class PhoneDB {

@@ -124,12 +124,22 @@ public class PersonInfo {
 				// 검색 : 이름 "석" 검색시 -> 이름에 “석"을 포함한 리스트 출력
 				System.out.println("<4. 검색>");
 				System.out.print(">이름 : ");
-				
+
 				String strsearch = sc.nextLine();
-//				for (int i = 0; i < dbList.size(); i++) {
-//
-//				}
-				
+
+				for (int i = 0; i < dbList.size(); i++) {
+					// dbList.get(i) 여기 안에서 이름안에 입력받은 변수 글자가 포함되어 있으면 true
+					// String contains()메서드를 사용하여string에 문자가 포함되어 있는지 확인
+					// : 이 메서드는 지정된 문자 시퀀스가 ​​문자열 내에 있으면 true를 반환하고 그렇지 않으면 false를 반환
+					if (dbList.get(i).getName().contains(strsearch)) {
+						System.out.print(i + 1 + ".    "); // + 1 이유 : 인덱스 번호에 +1 해서 보이기 위해서
+						System.out.print(dbList.get(i).getName() + "    ");
+						System.out.print(dbList.get(i).getHp() + "    ");
+						System.out.println(dbList.get(i).getCompany() + "    ");
+					} else {
+						System.out.print("[ 포함된 정보가 없습니다. ]");
+					}
+				}
 
 				System.out.println();
 				break;
@@ -146,7 +156,9 @@ public class PersonInfo {
 			} // switch문 종료
 
 			// 새로 등록 쓰기용 스트림
-			Writer fw = new FileWriter("/Users/joyunju/javaStudy/workspace/minipro/PhoneDB.txt");
+			// Writer fw = new
+			// FileWriter("/Users/joyunju/javaStudy/workspace/minipro/PhoneDB.txt");
+			Writer fw = new FileWriter("./PhoneDB.txt");
 			BufferedWriter bw = new BufferedWriter(fw);
 
 			for (PhoneDB db : dbList) {

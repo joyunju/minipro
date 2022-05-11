@@ -80,7 +80,7 @@ public class PersonInfo {
 					System.out.print(i + 1 + ".    ");
 					System.out.print(dbList.get(i).getName() + "    ");
 					System.out.print(dbList.get(i).getHp() + "    ");
-					System.out.println(dbList.get(i).getCompany() + "    ");
+					System.out.println(dbList.get(i).getCompany() + "/t");
 				}
 				System.out.println();
 
